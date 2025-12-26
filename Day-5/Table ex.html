@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Student Report</h1>
+    <label>Student Name: </label>
+    <input type="name" id="r1">
+    <br>
+    <br>
+    <label>Class: </label>
+    <input type="number" id="r2">
+    <br> <br>
+    <label>Register-Number: </label>
+    <input type="number" id="r3">
+    <br> <br>
+    <h3>Enter the Marks</h3>
+    <br>
+    <br>
+    <label>Tamil:</label>
+    <input type="number" id="r4">
+    <br>
+    <br>
+    <label>English:</label>
+    <input type="number" id="r5">
+    <br>
+    <br>
+    <label>Maths:</label>
+    <input type="number" id="r6">
+    <br>
+    <br>
+    <label>Science:</label>
+    <input type="number" id="r7">
+    <br>
+    <br>
+    <label>Social-Science:</label>
+    <input type="number" id="r8">
+    <h2 id="res"></h2>
+    <br>
+    <input type="button" value="Result" onclick="result()">
+
+    <script>
+
+        function result(){
+            let a = document.getElementById("r1").value
+            let b = document.getElementById("r2").value
+            let c = document.getElementById("r3").value
+            let tam = document.getElementById("r4").value
+            let eng = document.getElementById("r5").value
+            let mat = document.getElementById("r6").value
+            let sci = document.getElementById("r7").value
+            let soc = document.getElementById("r8").value
+
+            if(tam>=40 && eng>=40 && mat>=40 && sci>=40 && soc>=40){
+                document.getElementById("res").innerText="Pass"
+                document.getElementById("res").style="color: green"
+            }else{
+                document.getElementById("res").innerText="Fail"
+                document.getElementById("res").style="color: red"
+            
+            }
+            
+        }
+    </script>
+</body>
+</html>
