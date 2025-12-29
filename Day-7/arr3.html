@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Analyzer</title>
+
+    <style>
+        body {
+            background-color: #f2f2f2;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        .card {
+            background-color: white;
+            width: 300px;
+            margin: 100px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 90%;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            font-size: 16px;
+        }
+
+        .result {
+            margin-top: 15px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h2>Number Analyzer</h2>
+
+        <input type="text" id="num" placeholder="10, 20, 30">
+
+        <br>
+
+        <button onclick="analyze()">Analyze</button>
+
+        <div class="result" id="output"></div>
+    </div>
+
+    <script>
+        function analyze() {
+
+            var text = document.getElementById("num").value;
+
+            var numbers = text.split(",");
+
+            var sum = 0;
+            var max = Number(numbers[0]);
+            var min = Number(numbers[0]);
+
+            for (var i = 0; i < numbers.length; i++) {
+
+                var n = Number(numbers[i]);
+
+                sum = sum + n;
+
+                if (n > max) {
+                    max = n;
+                }
+
+                if (n < min) {
+                    min = n;
+                }
+            }
+
+            var average = sum / numbers.length;
+
+            document.getElementById("output").innerHTML =
+                "Sum: " + sum + "<br>" +
+                "Average: " + average + "<br>" +
+                "Largest Number: " + max + "<br>" +
+                "Smallest Number: " + min;
+        }
+    </script>
+
+</body>
+</html>
